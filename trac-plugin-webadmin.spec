@@ -1,7 +1,7 @@
 
 %define		dev_r	dev_r3158
 Summary:	Plugin for administering Trac projects through the web interface
-Summary(pl.UTF-8):   Wtyczka do administracji projektami Traca przez interfejs WWW
+Summary(pl.UTF-8):	Wtyczka do administracji projektami Traca przez interfejs WWW
 Name:		trac-plugin-webadmin
 Version:	0.1.2
 Release:	0.%{dev_r}.1
