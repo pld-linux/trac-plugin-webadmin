@@ -1,7 +1,7 @@
 
 %define		dev_r	dev_r3158
 Summary:	Plugin for administering Trac projects through the web interface
-Summary(pl):	Wtyczka do administracji projektami Traca przez interfejs WWW
+Summary(pl.UTF-8):   Wtyczka do administracji projektami Traca przez interfejs WWW
 Name:		trac-plugin-webadmin
 Version:	0.1.2
 Release:	0.%{dev_r}.1
@@ -21,10 +21,10 @@ Plugin for administering your Trac projects through the web interface.
 This plugin is still under development, but it already supports most of
 the tasks performed by trac-admin.
 
-%description -l pl
-Wtyczka dla Traca s³u¿±ca do administracji projektami poprzez
-interfejs WWW. Jest ci±gle rozwijana, jednak udostepnia ju¿ wiêksz±
-czê¶æ funkcjonalo¶ci programu trac-admin.
+%description -l pl.UTF-8
+Wtyczka dla Traca sÅ‚uÅ¼Ä…ca do administracji projektami poprzez
+interfejs WWW. Jest ciÄ…gle rozwijana, jednak udostepnia juÅ¼ wiÄ™kszÄ…
+czÄ™Å›Ä‡ funkcjonaloÅ›ci programu trac-admin.
 
 %prep
 %setup -q -n webadmin
