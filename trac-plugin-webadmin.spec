@@ -30,12 +30,12 @@ część funkcjonalości programu trac-admin.
 %setup -q -n webadmin
 
 %build
-python setup.py build
-python setup.py	egg_info
+%{__python} setup.py build
+%{__python} setup.py	egg_info
 
 %install
 rm -rf $RPM_BUILD_ROOT
-python setup.py install \
+%{__python} setup.py install \
 	--single-version-externally-managed \
 	--optimize 2 \
 	--root=$RPM_BUILD_ROOT
