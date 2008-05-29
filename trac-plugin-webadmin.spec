@@ -52,6 +52,7 @@ if [ "$1" = "1" ]; then
 	[components]
 	webadmin.* = enabled
 #'
+EOF
 fi
 
 %files
