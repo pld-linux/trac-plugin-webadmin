@@ -1,5 +1,5 @@
 %define		subver	dev_r3158
-%define		rel		1
+%define		rel		2
 Summary:	Plugin for administering Trac projects through the web interface
 Summary(pl.UTF-8):	Wtyczka do administracji projektami Traca przez interfejs WWW
 Name:		trac-plugin-webadmin
@@ -7,10 +7,11 @@ Version:	0.1.2
 Release:	0.%{subver}.%{rel}
 License:	distributable
 Group:		Applications/WWW
-Source0:	http://rakin.eu.org/trac-plugins/trac-plugin-webadmin-%{version}%{subver}.tar.gz
+Source0:	http://rakin.eu.org/trac-plugins/%{name}-%{version}%{subver}.tar.gz
 # Source0-md5:	2635ffb44e2e342cec17e9d87710f558
 URL:		http://projects.edgewall.com/trac/wiki/WebAdmin
 BuildRequires:	python-devel
+BuildRequires:	rpmbuild(macros) >= 1.194
 %pyrequires_eq  python-modules
 Requires:	trac
 BuildArch:	noarch
@@ -42,6 +43,16 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+if [ "$1" = "1" ]; then
+	%banner -e %{name} <<-'EOF'
+	Don't forget to enable webadmin in conf/trac.ini:
+
+	[components]
+	webadmin.* = enabled
+#'
+fi
 
 %files
 %defattr(644,root,root,755)
