@@ -1,5 +1,5 @@
 %define		subver	dev_r3158
-%define		rel		2
+%define		rel		3
 Summary:	Plugin for administering Trac projects through the web interface
 Summary(pl.UTF-8):	Wtyczka do administracji projektami Traca przez interfejs WWW
 Name:		trac-plugin-webadmin
