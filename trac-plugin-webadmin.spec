@@ -1,5 +1,5 @@
 %define		subver	dev_r3158
-%define		rel		3
+%define		rel		4
 Summary:	Plugin for administering Trac projects through the web interface
 Summary(pl.UTF-8):	Wtyczka do administracji projektami Traca przez interfejs WWW
 Name:		trac-plugin-webadmin
@@ -11,6 +11,7 @@ Source0:	http://rakin.eu.org/trac-plugins/%{name}-%{version}%{subver}.tar.gz
 # Source0-md5:	2635ffb44e2e342cec17e9d87710f558
 URL:		http://projects.edgewall.com/trac/wiki/WebAdmin
 BuildRequires:	python-devel
+BuildRequires:	python-setuptools
 BuildRequires:	rpmbuild(macros) >= 1.194
 %pyrequires_eq  python-modules
 Requires:	trac
@@ -29,10 +30,11 @@ część funkcjonalości programu trac-admin.
 
 %prep
 %setup -q -n webadmin
+find -name .svn | xargs rm -rf
 
 %build
 %{__python} setup.py build
-%{__python} setup.py	egg_info
+%{__python} setup.py egg_info
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -51,8 +53,8 @@ if [ "$1" = "1" ]; then
 
 	[components]
 	webadmin.* = enabled
-#'
 EOF
+#' - vim
 fi
 
 %files
